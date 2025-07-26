@@ -1,0 +1,99 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project Overview
+
+This is "Forte", a modern Angular application built with Angular 20.1.0 using the new zoneless change detection and standalone components architecture.
+
+## Development Commands
+
+### Start Development Server
+```bash
+ng serve
+# or
+npm start
+```
+Runs the development server at http://localhost:4200 with hot reloading.
+
+### Build
+```bash
+ng build
+# or 
+npm run build
+```
+Creates production build in `dist/` directory. Development build with source maps:
+```bash
+ng build --configuration development
+# or
+npm run watch
+```
+
+### Testing
+```bash
+ng test
+# or
+npm test
+```
+Runs unit tests using Karma and Jasmine test framework.
+
+### Code Generation
+```bash
+ng generate component component-name
+ng generate --help  # See all available schematics
+```
+
+## Architecture
+
+### Modern Angular Features
+- **Zoneless Change Detection**: Uses `provideZonelessChangeDetection()` instead of Zone.js
+- **Standalone Components**: All components use standalone architecture with imports array
+- **Signals**: Uses Angular signals for reactive state management (see `App` component)
+- **New Control Flow**: Template syntax uses @if, @for, @switch instead of structural directives
+
+### Project Structure
+```
+src/
+├── app/
+│   ├── app.ts          # Root component with signal-based state
+│   ├── app.config.ts   # Application configuration and providers
+│   ├── app.routes.ts   # Routing configuration (currently empty)
+│   ├── app.html        # Root template
+│   └── app.css         # Root styles
+├── main.ts             # Application bootstrap
+├── index.html          # Main HTML file
+└── styles.css          # Global styles
+```
+
+### Configuration Files
+- `angular.json` - Angular CLI workspace configuration
+- `tsconfig.app.json` - TypeScript config for app
+- `tsconfig.spec.json` - TypeScript config for tests
+- Bundle size limits: 500kB warning, 1MB error for initial bundle
+
+### Key Dependencies
+- Angular 20.1.0 (core, common, forms, router)
+- RxJS 7.8.0 for reactive programming
+- TypeScript 5.8.2
+- Karma + Jasmine for testing
+- **Tailwind CSS** for utility-first styling
+- **PrimeNG** for UI components and design system
+
+## Development Notes
+
+When creating new components, use standalone component syntax:
+```typescript
+@Component({
+  selector: 'app-example',
+  imports: [/* dependencies */],
+  templateUrl: './example.html',
+  styleUrl: './example.css'
+})
+```
+
+Use signals for reactive state management instead of traditional Angular change detection patterns.
+
+### Styling Guidelines
+- Use Tailwind CSS utility classes for styling
+- Leverage PrimeNG components for complex UI elements
+- Follow utility-first approach with Tailwind for custom styling
