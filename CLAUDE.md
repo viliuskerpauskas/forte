@@ -72,12 +72,16 @@ src/
 - Bundle size limits: 500kB warning, 1MB error for initial bundle
 
 ### Key Dependencies
-- Angular 20.1.0 (core, common, forms, router)
-- RxJS 7.8.0 for reactive programming
-- TypeScript 5.8.2
-- Karma + Jasmine for testing
-- **Tailwind CSS** for utility-first styling
-- **PrimeNG** for UI components and design system
+- **Angular 20.1.0** (core, common, forms, router, build, CLI)
+- **RxJS 7.8.0** for reactive programming
+- **TypeScript 5.8.2** for type safety
+- **Tailwind CSS 4.1.11** for utility-first styling
+- **PrimeNG 20.0.0** for UI components and design system
+- **PrimeIcons 7.0.0** for iconography
+- **@primeuix/themes 1.2.1** for theming system
+- **@fontsource/geist-sans 5.2.5** for typography
+- **tailwindcss-primeui 0.6.1** for PrimeNG-Tailwind integration
+- **Karma 6.4.0 + Jasmine 5.8.0** for testing
 
 ## Development Notes
 
