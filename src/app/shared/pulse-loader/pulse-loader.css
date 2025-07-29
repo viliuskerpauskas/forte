@@ -1,0 +1,39 @@
+:host {
+  --size: 100px;
+  --color: var(--p-text-color);
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: auto;
+}
+
+div {
+  width: 20px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--color);
+  box-shadow: 0 0 0 0 #0004;
+  animation: shadow-pulse 1.5s infinite linear;
+  position: relative;
+}
+div:before,
+div:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 #0004;
+  animation: inherit;
+  animation-delay: -0.5s;
+}
+div:after {
+  animation-delay: -1s;
+}
+@keyframes shadow-pulse {
+  100% {
+    box-shadow: 0 0 0 40px #0000;
+  }
+}
