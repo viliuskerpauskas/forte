@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(mkdir:*)",
-      "Bash(ng serve:*)"
+      "Bash(ng serve:*)",
+      "Bash(curl:*)",
+      "Bash(rm:*)"
     ]
   },
   "hooks": {
