@@ -23,12 +23,18 @@ const PrimePreset = definePreset(Aura, {
           inverseColor: '#ffffff',
           hoverColor: '{zinc.900}',
           activeColor: '{zinc.800}',
+          textMutedColor: '{zinc.900}',
         },
         highlight: {
           background: '{zinc.950}',
           focusBackground: '{zinc.700}',
           color: '#ffffff',
           focusColor: '#ffffff',
+        },
+        text: {
+          muted: {
+            color: '{zinc.600}',
+          },
         },
       },
       dark: {
