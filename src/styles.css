@@ -13,5 +13,6 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "Cal Sans", "Geist Sans", system-ui, -apple-system, sans-serif;
+  font-family: "Cal Sans", "Inter Variable", system-ui, -apple-system,
+    sans-serif;
 }

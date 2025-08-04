@@ -110,7 +110,8 @@ src/
 - **PrimeNG 20.0.0** for UI components and design system
 - **PrimeIcons 7.0.0** for iconography
 - **@primeuix/themes 1.2.1** for theming system
-- **@fontsource/geist-sans 5.2.5** for typography
+- **@fontsource-variable/inter 5.2.6** for primary typography (Inter font)
+- **@fontsource/cal-sans 5.2.2** for display typography (Cal Sans font)
 - **tailwindcss-primeui 0.6.1** for PrimeNG-Tailwind integration
 - **Karma 6.4.0 + Jasmine 5.8.0** for testing
 
