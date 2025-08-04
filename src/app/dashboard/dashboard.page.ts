@@ -1,24 +1,11 @@
-import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
-import { CardModule } from 'primeng/card';
-import { ButtonModule } from 'primeng/button';
-import { AuthService } from '../auth/auth.service';
+import { Component } from '@angular/core';
+import { PageHeader } from '../shared/page-header/page-header';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, CardModule, ButtonModule],
+  imports: [CommonModule, PageHeader],
   templateUrl: './dashboard.page.html',
-  styleUrl: './dashboard.page.css'
+  styleUrl: './dashboard.page.css',
 })
-export class DashboardPage {
-  private authService = inject(AuthService);
-  private router = inject(Router);
-
-  currentUser = this.authService.currentUser;
-
-  logout() {
-    this.authService.logout();
-    this.router.navigate(['/auth']);
-  }
-}
+export class DashboardPage {}

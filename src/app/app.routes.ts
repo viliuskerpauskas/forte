@@ -12,9 +12,25 @@ export const routes: Routes = [
     loadComponent: () => import('./auth/auth.page').then((m) => m.AuthPage),
   },
   {
-    path: 'dashboard',
-    loadComponent: () =>
-      import('./dashboard/dashboard.page').then((m) => m.DashboardPage),
+    path: '',
+    loadComponent: () => import('./layout/main-layout').then((m) => m.MainLayout),
     canActivate: [authGuard],
+    children: [
+      {
+        path: 'dashboard',
+        loadComponent: () =>
+          import('./dashboard/dashboard.page').then((m) => m.DashboardPage),
+      },
+      {
+        path: 'patients',
+        loadComponent: () =>
+          import('./patients/patients.page').then((m) => m.PatientsPage),
+      },
+      {
+        path: 'settings',
+        loadComponent: () =>
+          import('./settings/settings.page').then((m) => m.SettingsPage),
+      },
+    ],
   },
 ];
