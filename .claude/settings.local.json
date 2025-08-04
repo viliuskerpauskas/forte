@@ -4,7 +4,10 @@
       "Bash(mkdir:*)",
       "Bash(ng serve:*)",
       "Bash(curl:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm install:*)",
+      "Bash(ls:*)"
     ]
   },
   "hooks": {
