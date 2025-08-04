@@ -1,4 +1,12 @@
-import { Component, input } from '@angular/core';
+import { Component, inject, computed } from '@angular/core';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { filter, map } from 'rxjs/operators';
+
+interface RouteData {
+  title?: string;
+  description?: string;
+}
 
 @Component({
   selector: 'app-page-header',
@@ -7,6 +15,23 @@ import { Component, input } from '@angular/core';
   styleUrl: './page-header.css',
 })
 export class PageHeader {
-  title = input.required<string>();
-  description = input<string>();
+  private router = inject(Router);
+  private activatedRoute = inject(ActivatedRoute);
+
+  private routeData = toSignal(
+    this.router.events.pipe(
+      filter((event) => event instanceof NavigationEnd),
+      map((): RouteData => {
+        let route = this.activatedRoute;
+        while (route.firstChild) {
+          route = route.firstChild;
+        }
+        return route.snapshot.data as RouteData;
+      })
+    ),
+    { initialValue: {} as RouteData }
+  );
+
+  title = computed(() => this.routeData().title || '');
+  description = computed(() => this.routeData().description || '');
 }

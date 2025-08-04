@@ -18,16 +18,28 @@ export const routes: Routes = [
     children: [
       {
         path: 'dashboard',
+        data: { 
+          title: 'Darbalaukis',
+          description: 'Matykite pagrindinę savo informaciją'
+        },
         loadComponent: () =>
           import('./dashboard/dashboard.page').then((m) => m.DashboardPage),
       },
       {
         path: 'patients',
+        data: { 
+          title: 'Pacientai',
+          description: 'Valdykite pacientų informaciją ir duomenis'
+        },
         loadComponent: () =>
           import('./patients/patients.page').then((m) => m.PatientsPage),
       },
       {
         path: 'settings',
+        data: { 
+          title: 'Nustatymai',
+          description: 'Konfigūruokite sistemos nustatymus'
+        },
         loadComponent: () =>
           import('./settings/settings.page').then((m) => m.SettingsPage),
       },
